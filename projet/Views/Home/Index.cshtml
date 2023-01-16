@@ -1,0 +1,32 @@
+﻿@model IEnumerable<projet.Models.Hotel>
+
+
+@{
+    Layout = "_LayoutUser";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+            @foreach (var item in Model)
+            {
+
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </h5>
+                        <p class="card-text">
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </p>
+                        <a  class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+
+                    </div>
+                </div>
+            }
+</body>
+</html>
